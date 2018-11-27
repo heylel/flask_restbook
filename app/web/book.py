@@ -1,5 +1,5 @@
 from flask import request
-from app.libs.book import is_isbn_or_key
+from app.libs.helper import is_isbn_or_key
 from app.spider.yushu_book import YuShuBook
 from app.forms.book import SearchForm
 # 引入web模块

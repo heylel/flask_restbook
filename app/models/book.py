@@ -1,11 +1,14 @@
-from  sqlalchemy import Column,Integer,String
+from sqlalchemy import Column, Integer, String
 
-from app.models.base import Base
+from flask_sqlalchemy import SQLAlchemy
 
-class Book(Base):
-    id=Column(Integer,primary_key=True,autoincrement=True)
-    title=Column(String(50),nullable=True)
-    author=Column(String(30),default='nobody')
+db = SQLAlchemy
+
+
+class Book(db.Model):
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    title = Column(String(50), nullable=True)
+    author = Column(String(30), default='nobody')
     binding = Column(String(20))
     publisher = Column(String(50))
     price = Column(String(20))
